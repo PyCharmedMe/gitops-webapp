@@ -15,7 +15,7 @@ spec:
     spec:
       containers:
       - name: backend
-        image: pycharmedme/backend:v1 
+        image: pycharmedme/backend:v2 
         imagePullPolicy: Always
         ports:
         - containerPort: 5000
