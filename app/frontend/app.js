@@ -1,5 +1,5 @@
 function callBackend() {
-  fetch("http://192.168.49.2:32536:5000/api/hello")
+  fetch("http://192.168.49.2:5000/api/hello")
     .then(res => res.json())
     .then(data => {
       document.getElementById("result").innerText = data.message;
