@@ -1,10 +1,31 @@
+const BACKEND_URL = "http://192.168.49.2:32694/api/hello";
+
+function logEvent(message) {
+  const log = document.getElementById("log");
+  const item = document.createElement("li");
+  item.innerText = `${new Date().toLocaleTimeString()} - ${message}`;
+  log.prepend(item);
+}
+
+function setStatus(text, state) {
+  const status = document.getElementById("status");
+  status.innerText = text;
+  status.className = `status ${state}`;
+}
+
 function callBackend() {
-  console.log("Button clicked");
-  fetch("http://192.168.49.2:32694/api/hello")
+  setStatus("Checking backend...", "idle");
+  logEvent("Sending request to backend");
+
+  fetch(BACKEND_URL)
     .then(res => res.json())
     .then(data => {
-      console.log(data);
-      document.getElementById("result").innerText = data.message;
+      setStatus("Backend is UP ✅", "ok");
+      logEvent(`Response: ${data.message}`);
     })
-    .catch(err => console.error("Fetch error:", err));
+    .catch(err => {
+      setStatus("Backend ERROR ❌", "error");
+      logEvent("Backend request failed");
+      console.error(err);
+    });
 }
