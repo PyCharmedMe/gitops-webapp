@@ -15,7 +15,7 @@ spec:
     spec:
       containers:
       - name: frontend
-        image: pycharmedme/frontend:v1
+        image: pycharmedme/frontend:v3
         imagePullPolicy: Always
         ports:
         - containerPort: 80
