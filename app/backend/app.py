@@ -5,7 +5,7 @@ app = Flask(__name__)
 
 @app.route("/api/hello")
 def hello():
-    message = os.getenv("APP_MESSAGE", "Default Message")
+    message = os.getenv("APP_MESSAGE", "This is the Default Message")
     return jsonify(message=message)
 
 if __name__ == "__main__":
