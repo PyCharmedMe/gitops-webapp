@@ -2,7 +2,7 @@ apiVersion: v1
 kind: ConfigMap
 metadata:
   name: backend-config
-  namespace: web
+  namespace: gitops-demo
   labels:
     app: backend
     environment: production
