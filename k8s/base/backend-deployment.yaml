@@ -15,12 +15,20 @@ spec:
     spec:
       containers:
       - name: backend
-        image: pycharmedme/backend:v2  
+        image: pycharmedme/backend:v2
         ports:
         - containerPort: 5000
+        envFrom:  
+        - configMapRef:
+            name: backend-config
         env:
         - name: APP_MESSAGE
           valueFrom:
             configMapKeyRef:
               name: backend-config
               key: APP_MESSAGE
+        - name: FEATURE_EVENTS_V2
+          valueFrom:
+            configMapKeyRef:
+              name: backend-config
+              key: FEATURE_EVENTS_V2

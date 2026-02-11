@@ -6,6 +6,6 @@ metadata:
   labels:
     app: backend
     environment: production
-    FEATURE_EVENTS_V2: "false"
 data:
   APP_MESSAGE: "Hello from ConfigMap - Cloud Native Mode!"
+  FEATURE_EVENTS_V2: "false"  
