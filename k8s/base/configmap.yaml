@@ -8,4 +8,4 @@ metadata:
     environment: production
 data:
   APP_MESSAGE: "Hello from ConfigMap - Cloud Native Mode!"
-  FEATURE_EVENTS_V2: "false"  
+  FEATURE_EVENTS_V2: "true"  
