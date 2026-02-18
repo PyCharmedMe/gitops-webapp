@@ -8,5 +8,9 @@ def hello():
     message = os.getenv("APP_MESSAGE", "This is the Default Message")
     return jsonify(message=message)
 
+@app.route("/error")
+def error():
+    return "Internal Server Error", 500
+
 if __name__ == "__main__":
     app.run(host="0.0.0.0", port=5000)
